@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>COVID - WV Counties</title>
+		<style>
+			.section{
+				padding: 2px 5px 5px 5px;
+				border-top: 1px solid rgb(0, 0, 153);
+				background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .2), rgba(204, 224, 255, 0));
+			}
+			
+			.title{
+				font-size: 12px;
+				color: rgb(0, 0, 153);
+				display: block;
+				margin-top: 10px;
+			}
+			
+			input[type=checkbox] { 
+				vertical-align: middle; 
+				position: relative; 
+				bottom: 1px; 
+			} 
+			
+			select {
+				background: rgba(0, 20, 51, .5);
+				color: rgba(255, 255, 255, 0.9);
+				margin-top: 1px;
+				font-size: 10px;
+				letter-spacing: 1px;
+				border-radius: 3px;
+				position: absolute;
+				right: 25px;
+			}
+			
+			select option {
+				background: white;
+				color: rgb(0, 0, 153);
+			}
+		</style>
+	</head>
+	<body style="margin:0px; border-width:5px; border-style:outset; border-color: rgba(0, 61, 153, .5);">
+		<div id="loaded" style="display: none; padding: 10px; width: 250px; background-color: rgba(0, 61, 153, .1);">
+			<div class="title">
+				<b>MISC</b>
+			</div>
+			<div class="section">
+				<label style="" for="autorun">
+					<input style="" type="checkbox" id="autorun" name="autorun">
+					Autorun
+				</label>
+				<br>
+			</div>
+			<div class="title">
+				<b>NUMBERS (CSV)</b>
+			</div>
+			<div class="section">
+				<label for="county">
+					<input type="checkbox" id="county" name="county">
+					County Summary
+				</label><br>
+				<label for="tests">
+					<input type="checkbox" id="tests" name="tests">
+					Tests
+				</label><br>
+				<label for="cases">
+					<input type="checkbox" id="cases" name="cases">
+					Cases
+				</label><br>
+				<label for="cumulativePercentPositivity">
+					<input type="checkbox" id="cumulativePercentPositivity" name="cumulativePercentPositivity">
+					Cumulative Percent Positivity
+				</label><br>
+				<label for="cumulativeCases">
+					<input type="checkbox" id="cumulativeCases" name="cumulativeCases">
+					Cumulative Cases
+				</label><br>
+			</div>
+			<div class="title">
+				<b>GRAPHS</b>
+			</div>
+			<div class="section">
+				<label for="casesGraph">
+					<input type="checkbox" id="casesGraph" name="casesGraph">
+					Daily Cases
+					<select name="casesGraphFormat" id="casesGraphFormat">
+						<option value="bmp">BMP</option>
+						<option value="jpg">JPG</option>
+						<option value="png">PNG</option>
+						<option value="svg">SVG</option>			  
+					</select>
+				</label>
+				<br>
+				<label for="recoveredCasesGraph">
+					<input type="checkbox" id="recoveredCasesGraph" name="recoveredCasesGraph">
+					Recovered & Active Cases
+				</label>
+				<select name="recoveredCasesGraphFormat" id="recoveredCasesGraphFormat">
+					<option value="bmp">BMP</option>
+					<option value="jpg">JPG</option>
+					<option value="png">PNG</option>
+					<option value="svg">SVG</option>			  
+				</select>
+				<br>
+				<label for="dailyPercentPositiveGraph">
+					<input type="checkbox" id="dailyPercentPositiveGraph" name="dailyPercentPositiveGraph">
+					Daily Percent Positivity
+				</label>
+				<select name="dailyPercentPositiveGraphFormat" id="dailyPercentPositiveGraphFormat">
+					<option value="bmp">BMP</option>
+					<option value="jpg">JPG</option>
+					<option value="png">PNG</option>
+					<option value="svg">SVG</option>			  
+				</select>
+				<br>
+				<label for="cumulativePercentPositivityGraph">
+					<input type="checkbox" id="cumulativePercentPositivityGraph" name="cumulativePercentPositivityGraph">
+					Cumulative Percent Positivity
+				</label>
+				<select name="cumulativePercentPositivityGraphFormat" id="cumulativePercentPositivityGraphFormat">
+					<option value="bmp">BMP</option>
+					<option value="jpg">JPG</option>
+					<option value="png">PNG</option>
+					<option value="svg">SVG</option>			  
+				</select>
+				<br>
+			</div>
+			<div class="title">
+				<b>MAPS</b>
+			</div>
+			<div class="section">
+				<label for="alert_map">
+					<input type="checkbox" id="alert_map" name="alert_map">
+					County Alert
+				</label>
+				<select name="alert_map_format" id="alert_map_format">
+					<option value="bmp">BMP</option>
+					<option value="jpg">JPG</option>
+					<option value="png">PNG</option>
+					<option value="svg">SVG</option>			  
+				</select>
+				<br>
+			</div>
+			<button id="action-btn" value="Run" style="width: 100%; height: 50px; display:block; margin-top: 15px;">Run</button>
+		</div>
+		<div id="loading" style="display: block; padding: 10px; width: 250px; text-align: center">
+			Loading...
+		</div>
+		<script src="popup.js"></script>
+	</body>
+</html>
