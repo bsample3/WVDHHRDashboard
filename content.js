@@ -311,7 +311,7 @@ let buttons = {
 		return getNewButton("div.content.text", "County Alert").click();
 	},
 	showAsTable: () => {
-		return getButton("h6", "Show as a table").click();
+		return getButton("button[aria-label='Show as a table'] > span").click();
 	},
 	switchToVerticalLayout: () => {
 		return getButton("button[aria-label='Switch to vertical layout'] > i").click();
