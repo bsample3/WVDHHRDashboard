@@ -287,7 +287,7 @@ let buttons = {
 		return getNewButton("div.content.text", "Cumulative Summary").click();
 	},
 	backToSummary: () => {
-		return getNewButton("div.content.text", "Back to County Summary").click();
+		return getNewButton("div.content.text", "Back to Cumulative Summary").click();
 	},
 	caseLabTrends: () => {
 		return getNewButton("div.content.text", "Case and Lab Trends").click();
